@@ -1,0 +1,27 @@
+/* Global stillar. Tailwind v4 shu yerdan ulanadi.
+   Dark theme — fon va matn rangi <body>'da, Tailwind utility'lar bilan tuziladi. */
+
+@import "tailwindcss";
+
+html,
+body {
+  background: #030712;
+  color: #e5e7eb;
+  min-height: 100vh;
+}
+
+/* Scrollbar dark theme'ga moslashtirildi (WebKit) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #374151;
+}
