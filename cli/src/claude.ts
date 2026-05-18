@@ -30,7 +30,7 @@ Sening vazifang: berilgan git diff'ni o'qib, 3 xil sifatli commit message taklif
 Qoidalar:
 - Type majburiy: feat | fix | docs | refactor | chore | style | test | perf
 - Scope ixtiyoriy, qavs ichida (masalan: auth, api, ui)
-- Description qisqa, imperative mood, 72 belgidan kam, nuqta bilan tugamaydi
+- Description O'ZBEK TILIDA yozilsin, qisqa, imperative mood, 72 belgidan kam, nuqta bilan tugamaydi
 - 3 ta variant TURLICHA bo'lsin: turli type, scope yoki ifoda
 - "full" field: agar scope bo'lsa "type(scope): description", aks holda "type: description"
 - FAQAT JSON qaytar, boshqa hech narsa yozma — markdown ham, tushuntirish ham yo'q
