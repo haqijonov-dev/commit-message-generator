@@ -36,7 +36,7 @@ Qoidalar:
 - FAQAT JSON qaytar, boshqa hech narsa yozma — markdown ham, tushuntirish ham yo'q
 
 Javob formati (qat'iy):
-{"suggestions":[{"type":"feat","scope":"auth","description":"add password reset flow","full":"feat(auth): add password reset flow"},{"type":"fix","scope":"auth","description":"handle expired reset tokens","full":"fix(auth): handle expired reset tokens"},{"type":"refactor","scope":"","description":"extract token validation helper","full":"refactor: extract token validation helper"}]}`;
+{"suggestions":[{"type":"feat","scope":"auth","description":"parol tiklash oqimini qo'shish","full":"feat(auth): parol tiklash oqimini qo'shish"},{"type":"fix","scope":"auth","description":"muddati o'tgan tokenlarni qayta ishlash","full":"fix(auth): muddati o'tgan tokenlarni qayta ishlash"},{"type":"refactor","scope":"","description":"token tekshirish yordamchisini ajratish","full":"refactor: token tekshirish yordamchisini ajratish"}]}`;
 
 export async function generateCommitMessages(diff: string): Promise<CommitSuggestion[]> {
   const apiKey = process.env.ANTHROPIC_API_KEY;
