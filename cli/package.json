@@ -1,10 +1,10 @@
 {
-  "name": "commit-ai",
-  "version": "1.0.0",
+  "name": "@haqijonov/commit-ai",
+  "version": "1.0.1",
   "description": "AI-powered commit message generator CLI",
   "main": "dist/index.js",
   "bin": {
-    "commit-ai": "./dist/index.js"
+    "commit-ai": "dist/index.js"
   },
   "scripts": {
     "build": "tsc",
