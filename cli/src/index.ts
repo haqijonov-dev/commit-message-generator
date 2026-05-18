@@ -2,7 +2,7 @@
 import { execSync } from 'child_process';
 import chalk from 'chalk';
 import { getStagedDiff } from './git';
-import { generateCommitMessages } from './claude';
+import { generateCommitMessages, DiffTooLargeError } from './claude';
 import { selectCommitMessage } from './prompt';
 
 async function main(): Promise<void> {
@@ -27,6 +27,23 @@ async function main(): Promise<void> {
 }
 
 main().catch((error: unknown) => {
+  if (error instanceof DiffTooLargeError) {
+    console.error(chalk.red('\n❌ Diff juda katta! (50 000 belgidan oshdi)'));
+    console.error(
+      chalk.yellow(
+        "💡 Sabab: node_modules yoki package-lock.json staged bo'lib qolgan bo'lishi mumkin."
+      )
+    );
+    console.error(chalk.cyan('🔧 Yechim:\n'));
+    console.error('   git reset HEAD .');
+    console.error(
+      chalk.dim('   Yuqoridagi buyruqni bajaring — .gitignore avtomatik yangilanadi')
+    );
+    console.error('   git add .');
+    console.error('   npx commit-ai\n');
+    process.exit(1);
+  }
+
   const message = error instanceof Error ? error.message : String(error);
   console.error(chalk.red(`\n❌ Xatolik: ${message}`));
   process.exit(1);

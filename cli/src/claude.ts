@@ -20,6 +20,13 @@ interface ServerResponse {
   error?: string;
 }
 
+export class DiffTooLargeError extends Error {
+  constructor(message = "Diff juda katta") {
+    super(message);
+    this.name = 'DiffTooLargeError';
+  }
+}
+
 const API_URL = 'https://commit-message-generator-one.vercel.app/api/generate';
 
 export async function generateCommitMessages(diff: string): Promise<CommitSuggestion[]> {
@@ -39,6 +46,10 @@ export async function generateCommitMessages(diff: string): Promise<CommitSugges
     data = (await response.json()) as ServerResponse;
   } catch {
     throw new Error('Server bilan ulanishda xato');
+  }
+
+  if (response.status === 413) {
+    throw new DiffTooLargeError(data.error);
   }
 
   if (!response.ok) {
