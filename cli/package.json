@@ -1,15 +1,23 @@
 {
   "name": "@haqijonov/commit-ai",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "AI-powered commit message generator CLI",
   "main": "dist/index.js",
   "bin": {
     "commit-ai": "dist/index.js"
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "build": "tsc",
     "dev": "ts-node src/index.ts",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "git",
@@ -21,9 +29,7 @@
   "author": "haqijonov-dev",
   "license": "MIT",
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.30.1",
     "chalk": "^4.1.2",
-    "dotenv": "^16.4.5",
     "inquirer": "^8.2.6"
   },
   "devDependencies": {
